@@ -1,0 +1,3 @@
+source,strategy,total_unique_keys,median_bucket_size,p95_bucket_size,max_bucket_size,buckets_gt_100,buckets_gt_1000,buckets_gt_10000,buckets_gt_100000
+Source 2,Country + First 2 Tokens,1925232,1.0,6.0,25667,1387,44,1,0
+Source 3,Country + First 2 Tokens,2062241,1.0,6.0,29296,1769,44,1,0

@@ -1,0 +1,11 @@
+Target Source,Strategy,Elapsed Time (s),Est Index Memory (MB),Candidate Pairs,Pair Recall %,Complete Entity Recall %,Avg Candidates/S1,95th Percentile,Max Candidates/S1,Median Candidates/S1,Cap Threshold,Cap Entities Hit,Cap Pairs Removed,Cap GT Lost (pessimistic),Cap Recall Impact %
+Source 2,Strategy 1: Country + Exact Normalized Name,11.18,557.84,10344168,21.44,10.78,4.69,30.0,526,,,,,,
+Source 3,Strategy 1: Country + Exact Normalized Name,11.19,603.94,11417484,22.23,10.68,5.17,30.0,516,,,,,,
+Source 2,Strategy 2: Country + First 2 Tokens,19.73,521.5,99694866,53.7835,37.7283,45.176,490.0,500,5.0,500.0,109234.0,537286244.0,132036.0,3.5747
+Source 3,Strategy 2: Country + First 2 Tokens,18.69,556.8,105773118,52.0214,34.3746,47.93,490.0,500,5.0,500.0,108022.0,533466106.0,130202.0,3.3006
+Source 2,Union: Strategy 1 + Strategy 2,19.73,521.5,103840059,55.8698,38.9308,47.054,490.0,994,5.0,500.0,,,,
+Source 3,Union: Strategy 1 + Strategy 2,18.69,556.8,110043631,54.0945,35.501,49.865,490.0,990,6.0,500.0,,,,
+Source 2,Strategy 3: Country + First 3 Tokens,48.49,450.2,26888665,27.904,17.4694,12.184,25.0,500,1.0,500,11281,44556394,12176,0.3296
+Source 2,Union: S1+S2+S3,48.49,450.2,639143454,57.835,40.815,289.622,490.0,25667,5.0,,,,,
+Source 3,Strategy 3: Country + First 3 Tokens,53.61,500.0,27973834,26.7392,15.7169,12.676,29.0,500,1.0,500,12297,45236510,12943,0.3281
+Source 3,Union: S1+S2+S3,53.61,500.0,641487544,55.8569,37.0773,290.684,490.0,29296,6.0,,,,,

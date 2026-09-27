@@ -1,0 +1,9 @@
+Strategy,Target,Candidate Pairs,Pair Recall %,Complete Entity Recall %,Avg Candidates/S1,P95 Candidates/S1,Runtime (s)
+Strategy 1: Exact Name,S1→S2,5460,21.03,10.61,0.27,2.0,0.0
+Strategy 2: 2-Token,S1→S2,118854,56.22,40.1,5.94,11.0,0.0
+Strategy 4: 3-gram,S1→S2,3997197,85.81,79.48,199.86,200.0,14.8
+Union: S1∪S2∪S4,S1→S2,4062337,86.46,80.21,203.12,204.0,14.9
+Strategy 1: Exact Name,S1→S3,6126,22.55,11.22,0.31,2.0,0.0
+Strategy 2: 2-Token,S1→S3,113746,55.13,36.9,5.69,11.0,0.0
+Strategy 4: 3-gram,S1→S3,3997398,87.12,80.15,199.87,200.0,15.1
+Union: S1∪S2∪S4,S1→S3,4061058,88.7,81.76,203.05,204.0,15.5

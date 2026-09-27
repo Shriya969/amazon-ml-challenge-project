@@ -1,0 +1,7 @@
+project/student_resource/
+project/student_resource/
+
+.DS_Store
+__pycache__/
+*.pyc
+project/outputs/predictions/

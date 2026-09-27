@@ -1,0 +1,135 @@
+
+Previous Strategy 1+2 union recall loaded: {'Source 2': {'pair_recall': 55.8698, 'complete_recall': 38.9308, 'candidate_pairs': 103840059}, 'Source 3': {'pair_recall': 54.0945, 'complete_recall': 35.501, 'candidate_pairs': 110043631}}
+
+=== Loading datasets ===
+  Loading Source 1 ...
+  Loaded 2,206,821 rows in 1.8s
+  Loading Source 2 ...
+  Loaded 5,034,616 rows in 4.7s
+  Loading Source 3 ...
+  Loaded 5,285,603 rows in 5.0s
+  Loading Ground Truth ...
+  Loaded 2,206,821 rows in 1.1s
+
+=== Preprocessing ===
+  Done in 36.7s
+  third_token column confirmed. Sample: ['barbershop', '', '']
+
+=== Parsing ground truth ===
+  GT pairs -> S2: 3,693,619  S3: 3,944,746
+
+============================================================
+=== STRATEGY 3:  S1 → SOURCE 2 ===
+============================================================
+
+  Building 3-token index (S2) ...
+    Building 3-token inverted index ...
+    Index built: 1,918,606 keys in 4.4s, ~450 MB
+  Building 2-token index (S2) for union ...
+  Building exact-name index (S2) for union ...
+
+  Streaming 2,206,821 S1 entities ...
+  [S1→S2] 200,000/2,206,821 (9.1%)  elapsed=4s  ETA=45s  s3_cands=2,456,421  cap_hits=1,023  union_cands=58,251,233
+  [S1→S2] 400,000/2,206,821 (18.1%)  elapsed=4s  ETA=17s  s3_cands=4,864,957  cap_hits=2,042  union_cands=115,283,606
+  [S1→S2] 600,000/2,206,821 (27.2%)  elapsed=4s  ETA=12s  s3_cands=7,297,964  cap_hits=3,051  union_cands=173,037,790
+  [S1→S2] 800,000/2,206,821 (36.3%)  elapsed=4s  ETA=7s  s3_cands=9,756,814  cap_hits=4,086  union_cands=231,446,949
+  [S1→S2] 1,000,000/2,206,821 (45.3%)  elapsed=4s  ETA=5s  s3_cands=12,199,271  cap_hits=5,103  union_cands=290,146,980
+  [S1→S2] 1,200,000/2,206,821 (54.4%)  elapsed=4s  ETA=4s  s3_cands=14,633,304  cap_hits=6,063  union_cands=348,417,321
+  [S1→S2] 1,400,000/2,206,821 (63.4%)  elapsed=5s  ETA=3s  s3_cands=17,049,513  cap_hits=7,068  union_cands=405,940,789
+  [S1→S2] 1,600,000/2,206,821 (72.5%)  elapsed=5s  ETA=2s  s3_cands=19,486,200  cap_hits=8,106  union_cands=464,101,565
+  [S1→S2] 1,800,000/2,206,821 (81.6%)  elapsed=5s  ETA=1s  s3_cands=21,878,103  cap_hits=9,132  union_cands=521,430,593
+  [S1→S2] 2,000,000/2,206,821 (90.6%)  elapsed=5s  ETA=0s  s3_cands=24,349,399  cap_hits=10,189  union_cands=580,032,418
+  [S1→S2] 2,200,000/2,206,821 (99.7%)  elapsed=4s  ETA=0s  s3_cands=26,806,323  cap_hits=11,248  union_cands=637,267,079
+
+  ┌─────────────────────────────────────────────────────────────┐
+  │  STRATEGY 3  (S1→S2)  Country + First 3 Tokens             │
+  ├─────────────────────────────────────────────────────────────┤
+  │  Candidate pairs       :      26,888,665              │
+  │  Pair recall           :          27.90%              │
+  │  Complete entity recall:          17.47%              │
+  │  Avg cands / S1        :           12.18              │
+  │  Median cands / S1     :            1.00              │
+  │  P95 cands / S1        :            25.0              │
+  │  Max cands / S1        :             500              │
+  │  Runtime               :           48.5s              │
+  │  Index memory          :           450 MB              │
+  ├──────────────── 500-CAP IMPACT ─────────────────────────────┤
+  │  S1 entities capped    :          11,281              │
+  │  Pairs removed by cap  :      44,556,394              │
+  │  GT pairs lost (pessim):          12,176              │
+  │  GT recall impact      :         0.3296%              │
+  ├──────────────── CUMULATIVE UNION  S1∪S2∪S3 ────────────────┤
+  │  Union candidate pairs :     639,143,454              │
+  │  Union pair recall     :          57.84%              │
+  │  Union complete recall :          40.81%              │
+  │  Union avg cands/entity:          289.62              │
+  │  New pairs from Strat3 :               0              │
+  ├──────────────── INCREMENTAL GAIN ───────────────────────────┤
+  │  S1∪S2 pair recall     :        55.8698%              │
+  │  S1∪S2∪S3 pair recall  :          57.84%              │
+  │  Incremental pair rec  :         1.9652%              │
+  │  Incremental comp. rec :         1.8842%              │
+  └─────────────────────────────────────────────────────────────┘
+    
+
+============================================================
+=== STRATEGY 3:  S1 → SOURCE 3 ===
+============================================================
+
+  Building 3-token index (S3) ...
+    Building 3-token inverted index ...
+    Index built: 2,125,529 keys in 4.7s, ~500 MB
+  Building 2-token index (S3) for union ...
+  Building exact-name index (S3) for union ...
+
+  Streaming 2,206,821 S1 entities ...
+  [S1→S3] 200,000/2,206,821 (9.1%)  elapsed=6s  ETA=58s  s3_cands=2,556,667  cap_hits=1,120  union_cands=58,444,761
+  [S1→S3] 400,000/2,206,821 (18.1%)  elapsed=5s  ETA=22s  s3_cands=5,064,938  cap_hits=2,235  union_cands=115,715,095
+  [S1→S3] 600,000/2,206,821 (27.2%)  elapsed=5s  ETA=13s  s3_cands=7,597,702  cap_hits=3,344  union_cands=173,699,283
+  [S1→S3] 800,000/2,206,821 (36.3%)  elapsed=5s  ETA=8s  s3_cands=10,153,304  cap_hits=4,468  union_cands=232,319,439
+  [S1→S3] 1,000,000/2,206,821 (45.3%)  elapsed=5s  ETA=6s  s3_cands=12,697,570  cap_hits=5,580  union_cands=291,226,244
+  [S1→S3] 1,200,000/2,206,821 (54.4%)  elapsed=5s  ETA=4s  s3_cands=15,226,600  cap_hits=6,648  union_cands=349,689,151
+  [S1→S3] 1,400,000/2,206,821 (63.4%)  elapsed=5s  ETA=3s  s3_cands=17,738,818  cap_hits=7,724  union_cands=407,426,435
+  [S1→S3] 1,600,000/2,206,821 (72.5%)  elapsed=5s  ETA=2s  s3_cands=20,275,303  cap_hits=8,853  union_cands=465,797,500
+  [S1→S3] 1,800,000/2,206,821 (81.6%)  elapsed=5s  ETA=1s  s3_cands=22,763,916  cap_hits=9,970  union_cands=523,344,797
+  [S1→S3] 2,000,000/2,206,821 (90.6%)  elapsed=5s  ETA=0s  s3_cands=25,334,538  cap_hits=11,110  union_cands=582,156,126
+  [S1→S3] 2,200,000/2,206,821 (99.7%)  elapsed=5s  ETA=0s  s3_cands=27,887,723  cap_hits=12,259  union_cands=639,603,671
+
+  ┌─────────────────────────────────────────────────────────────┐
+  │  STRATEGY 3  (S1→S3)  Country + First 3 Tokens             │
+  ├─────────────────────────────────────────────────────────────┤
+  │  Candidate pairs       :      27,973,834              │
+  │  Pair recall           :          26.74%              │
+  │  Complete entity recall:          15.72%              │
+  │  Avg cands / S1        :           12.68              │
+  │  Median cands / S1     :            1.00              │
+  │  P95 cands / S1        :            29.0              │
+  │  Max cands / S1        :             500              │
+  │  Runtime               :           53.6s              │
+  │  Index memory          :           500 MB              │
+  ├──────────────── 500-CAP IMPACT ─────────────────────────────┤
+  │  S1 entities capped    :          12,297              │
+  │  Pairs removed by cap  :      45,236,510              │
+  │  GT pairs lost (pessim):          12,943              │
+  │  GT recall impact      :         0.3281%              │
+  ├──────────────── CUMULATIVE UNION  S1∪S2∪S3 ────────────────┤
+  │  Union candidate pairs :     641,487,544              │
+  │  Union pair recall     :          55.86%              │
+  │  Union complete recall :          37.08%              │
+  │  Union avg cands/entity:          290.68              │
+  │  New pairs from Strat3 :               0              │
+  ├──────────────── INCREMENTAL GAIN ───────────────────────────┤
+  │  S1∪S2 pair recall     :        54.0945%              │
+  │  S1∪S2∪S3 pair recall  :          55.86%              │
+  │  Incremental pair rec  :         1.7624%              │
+  │  Incremental comp. rec :         1.5763%              │
+  └─────────────────────────────────────────────────────────────┘
+    
+
+=== Saving results ===
+  Saved outputs/reports/strategy3_results.csv
+  Updated outputs/reports/blocking_results.csv
+  Saved outputs/reports/blocking_summary.md
+
+=== ALL DONE ===
+Strategy 3 evaluation complete. Stopped as requested.

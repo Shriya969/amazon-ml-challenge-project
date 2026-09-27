@@ -1,0 +1,5 @@
+Dataset,File Size (MB),Rows,Columns,Pandas RAM (MB),Missing Names,Missing Addr,Missing Country,Unique Entities
+train_source1.tsv,200.34,2206821,4,259.33,0,0,0,2206821
+train_source2.tsv,466.63,5034616,4,601.08,2,168967,0,5034616
+train_source3.tsv,480.37,5285603,4,622.86,13,175916,0,5285603
+train_ground_truth.tsv,121.13,2206821,2,150.83,0,0,0,2206821
